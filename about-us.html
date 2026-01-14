@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | GitAura - Developer Analytics & Identity</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Plus+Jakarta+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background: #020617; color: white; line-height: 1.8; }
+        .aura-font { font-family: 'Orbitron', sans-serif; }
+        .glass-card { background: rgba(15, 23, 42, 0.8); backdrop-filter: blur(16px); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 24px; }
+        .bg-mesh { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; background-image: radial-gradient(at 0% 0%, hsla(253,16%,7%,1) 0, transparent 50%), radial-gradient(at 50% 0%, hsla(225,39%,30%,1) 0, transparent 50%), radial-gradient(at 100% 0%, hsla(339,49%,30%,1) 0, transparent 50%); }
+        .content-section { margin-bottom: 3rem; }
+        h2 { color: #818cf8; font-family: 'Orbitron', sans-serif; font-size: 1.5rem; margin-bottom: 1rem; margin-top: 2rem; }
+        p { color: #cbd5e1; margin-bottom: 1.2rem; text-align: justify; }
+    </style>
+</head>
+<body class="p-6 md:p-12">
+    <div class="bg-mesh"></div>
+
+    <div class="max-w-4xl mx-auto">
+        <a href="index.html" class="text-indigo-400 text-xs font-bold uppercase tracking-widest hover:text-white transition-colors mb-8 inline-block">← Back to Scanner</a>
+
+        <div class="glass-card p-8 md:p-12">
+            <h1 class="aura-font text-4xl md:text-5xl font-black mb-6 bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent">
+                About GitAura
+            </h1>
+
+            <div class="content-section">
+                <h2>The Vision Behind GitAura</h2>
+                <p>
+                    GitAura was born out of a simple observation: modern software engineering is as much about identity as it is about code. In an era where a developer's GitHub profile serves as a digital resume, understanding one's impact on the open-source ecosystem is paramount. GitAura is designed to bridge the gap between dry statistics and emotional achievement. We believe that every commit, every repository, and every follower represents a step in a developer's journey toward mastery.
+                </p>
+                <p>
+                    Our platform gamifies the GitHub experience, not to reduce development to mere numbers, but to provide a sense of progression. Whether you are a "Rookie" just pushed your first "Hello World" or a "Git God" managing microservices used by millions, GitAura gives you a visual badge of honor to showcase your dedication.
+                </p>
+            </div>
+
+            <div class="content-section">
+                <h2>How the Aura Score is Calculated</h2>
+                <p>
+                    The "Aura Score" isn't just a random number. Our proprietary algorithm (Version 1.0) analyzes multiple data points fetched directly from the GitHub REST API. We look at:
+                </p>
+                <ul class="list-disc list-inside text-slate-400 space-y-2 mb-4 ml-4">
+                    <li><strong>Public Repositories:</strong> Each repo adds 15 points, reflecting your breadth of work.</li>
+                    <li><strong>Followers:</strong> Each follower adds 30 points, representing your influence in the community.</li>
+                    <li><strong>Account Age:</strong> We reward consistency. Every year of experience adds 250 points.</li>
+                    <li><strong>Public Gists:</strong> Code snippets and small utilities add 10 points each.</li>
+                </ul>
+                <p>
+                    This multi-layered approach ensures that a seasoned developer with a few high-impact repos and a large following is ranked alongside a prolific contributor who maintains dozens of active projects.
+                </p>
+            </div>
+
+            <div class="content-section">
+                <h2>Bridging the Gap: Gamification & Coding</h2>
+                <p>
+                    Psychological studies suggest that gamification—the application of game-design elements in non-game contexts—can significantly boost productivity and motivation. By introducing ranks like "Titan," "Mythic," and "Celestial," GitAura encourages developers to optimize their profiles, contribute more to open source, and maintain a consistent presence on GitHub.
+                </p>
+                <p>
+                    GitAura is more than a tool; it's a celebration of the "Bit-Culture." We provide shareable digital cards that allow developers to display their stats on social media platforms like X (formerly Twitter), LinkedIn, and Discord. This fosters a healthy community where developers can compare their growth and inspire others to start their own journey.
+                </p>
+            </div>
+
+            <div class="content-section">
+                <h2>Our Commitment to Privacy</h2>
+                <p>
+                    In today's digital landscape, privacy is not a luxury—it is a right. GitAura operates on a "Zero-Storage" policy. We do not maintain databases of user information. All data processed by our scanner is fetched in real-time from public GitHub profiles and exists only within your browser's session. Once the card is generated and the tab is closed, no trace of your data remains on our servers. We leverage the security and transparency of the GitHub API to ensure that your identity remains yours alone.
+                </p>
+            </div>
+
+            <div class="content-section">
+                <h2>The Technology Stack</h2>
+                <p>
+                    GitAura is built using cutting-edge web technologies to ensure speed, reliability, and aesthetics. The frontend is powered by <strong>Tailwind CSS</strong> for a responsive and modern UI, while <strong>JavaScript (ES6+)</strong> handles the asynchronous API calls. To provide the "Save Card" feature, we utilize <strong>HTML2Canvas</strong>, which renders DOM elements into high-definition images locally on the user's device. This ensures that the generation of your Aura Card is instantaneous and does not require server-side rendering, keeping our platform fast and efficient.
+                </p>
+            </div>
+
+            <div class="content-section">
+                <h2>Meet the Creator</h2>
+                <p>
+Hi, I’m Aditya Sharma, the creator of GitAura. I’m currently pursuing my BCA and love turning raw code and data into something visual and meaningful.
+
+GitAura was born from a simple idea: GitHub shows stats, but not the aura behind a developer’s journey. I wanted to transform those numbers into a shareable identity that reflects effort, consistency, and growth.
+
+As a passionate Full-Stack Developer, I built GitAura for students and professionals alike—to celebrate progress, commits, and dedication. Your work matters, and GitAura is here to show it.                </p>
+            </div>
+
+            <div class="pt-8 border-t border-white/10 text-center">
+                <p class="text-[10px] tracking-widest uppercase aura-font text-slate-500">
+                    Git-Aura Pro • 2026 • Built for the Developer Community
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <footer class="mt-12 mb-8 text-center">
+        <nav class="flex justify-center gap-6 text-[10px] font-bold uppercase tracking-widest text-slate-600">
+            <a href="index.html" class="hover:text-indigo-400">Home</a>
+            <a href="privacy-policy.html" class="hover:text-indigo-400">Privacy</a>
+            <a href="disclaimer.html" class="hover:text-indigo-400">Disclaimer</a>
+            <a href="Contact.html" class="hover:text-indigo-400">Contact</a>
+        </nav>
+    </footer>
+</body>
+</html>

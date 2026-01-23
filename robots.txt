@@ -1,0 +1,20 @@
+# GitAura Pro - Global Search Engine Optimization
+User-agent: *
+Allow: /
+Allow: /increase-aura.html
+Allow: /top-india.html
+
+# Exclude private directories and temporary fragments
+Disallow: /private/
+Disallow: /temp/
+Disallow: /api/
+Disallow: /admin/
+Disallow: /*?  # Disallow tracking parameters to prevent duplicate content
+
+# Boost Indexing Speed
+Crawl-delay: 1
+
+# Sitemap Location
+Sitemap: https://gitaura-pro.vercel.app/sitemap.xml
+
+# Hosted on Vercel Edge - Optimized for 2026 Web Standards

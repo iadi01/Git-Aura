@@ -2,108 +2,156 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     
-    <title>LeetAura Pro | LeetCode Profile Analyzer & Rank Card Generator</title>
-    <meta name="description" content="LeetAura Pro is coming soon. The ultimate LeetCode profile analyzer and rank card generator for developers. Track your coding stats and display your LeetCode identity.">
-    <meta name="keywords" content="LeetAura, LeetCode profile analyzer, LeetCode stats card, LeetCode rank, coding interview prep tool, LeetCode aura score">
-    <link rel="canonical" href="https://gitaura-pro.vercel.app/leetaura" />
-
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebPage",
-      "name": "LeetAura Pro Coming Soon",
-      "description": "Advanced LeetCode performance analytics and developer identity scanner.",
-      "mainEntity": {
-        "@type": "SoftwareApplication",
-        "name": "LeetAura Pro",
-        "applicationCategory": "DeveloperApplication",
-        "operatingSystem": "Web",
-        "offers": {
-          "@type": "Offer",
-          "availability": "https://schema.org/PreOrder"
-        }
-      }
-    }
-    </script>
+    <title>LeetAura Pro | Decoding Competitive Programming DNA</title>
+    <meta name="description" content="Official LeetAura Pro coming soon. Experience the world's most advanced LeetCode profile scanner.">
 
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Plus+Jakarta+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=JetBrains+Mono:wght@300;500&family=Plus+Jakarta+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    
     <style>
-        body { font-family: 'Plus Jakarta Sans', sans-serif; background: #020617; color: white; overflow: hidden; }
+        :root { --accent: #6366f1; --pink: #ec4899; }
+        body { 
+            font-family: 'Plus Jakarta Sans', sans-serif; 
+            background: #010409; 
+            color: white; 
+            margin: 0; 
+            overflow-x: hidden;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
         .aura-font { font-family: 'Orbitron', sans-serif; }
-        .bg-mesh { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; background-image: radial-gradient(at 0% 0%, hsla(253,16%,7%,1) 0, transparent 50%), radial-gradient(at 50% 0%, hsla(225,39%,30%,1) 0, transparent 50%), radial-gradient(at 100% 0%, hsla(339,49%,30%,1) 0, transparent 50%); }
-        .gradient-border { background: linear-gradient(135deg, #6366f1, #a855f7, #ec4899); padding: 2px; border-radius: 26px; display: inline-block; }
-        .glass-card { background: rgba(15, 23, 42, 0.8); backdrop-filter: blur(16px); border-radius: 24px; padding: 2.5rem; }
-        .glow-text { text-shadow: 0 0 20px rgba(99, 102, 241, 0.6); }
-        .float { animation: floating 3s ease-in-out infinite; }
-        @keyframes floating { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-15px); } }
-        /* For SEO: Screen-reader only text to boost keyword density without hurting UX */
-        .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); border: 0; }
+        .mono-font { font-family: 'JetBrains Mono', monospace; }
+        
+        /* Optimized Grid for Mobile Performance */
+        .grid-bg {
+            position: fixed; inset: 0; z-index: -1;
+            background-image: 
+                linear-gradient(to right, rgba(99, 102, 241, 0.05) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(99, 102, 241, 0.05) 1px, transparent 1px);
+            background-size: 30px 30px;
+            mask-image: radial-gradient(circle at center, black, transparent 85%);
+        }
+
+        .bg-mesh { 
+            position: fixed; inset: 0; z-index: -2;
+            background: radial-gradient(circle at 50% 20%, rgba(99, 102, 241, 0.15) 0%, transparent 50%),
+                        radial-gradient(circle at 50% 80%, rgba(236, 72, 153, 0.08) 0%, transparent 50%);
+        }
+
+        .glass-panel {
+            background: rgba(13, 17, 23, 0.8);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .scanner {
+            height: 100%; width: 2px;
+            background: var(--accent);
+            position: absolute; left: 0; top: 0;
+            filter: drop-shadow(0 0 8px var(--accent));
+            animation: moveScan 3.5s infinite ease-in-out;
+        }
+        @keyframes moveScan {
+            0%, 100% { left: 0%; opacity: 0; }
+            50% { left: 100%; opacity: 1; }
+        }
+
+        .float-box { animation: float 5s infinite ease-in-out; }
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-12px) rotate(3deg); }
+        }
+
+        .glitch-hover:hover { animation: glitch 0.3s infinite; }
+        @keyframes glitch {
+            0% { transform: translate(0); text-shadow: none; }
+            20% { transform: translate(-1px, 1px); text-shadow: 1px 0 var(--accent), -1px 0 var(--pink); }
+            40% { transform: translate(1px, -1px); text-shadow: -1px 0 var(--accent), 1px 0 var(--pink); }
+            100% { transform: translate(0); }
+        }
+
+        /* Mobile specific scroll fix */
+        main { flex: 1 0 auto; }
+        footer { flex-shrink: 0; }
     </style>
 </head>
-<body class="min-h-screen flex flex-col items-center justify-center p-7">
+<body class="no-select">
+    <div class="grid-bg"></div>
     <div class="bg-mesh"></div>
 
-    <div class="sr-only">
-        <h2>LeetCode Rank and Statistics Visualization</h2>
-        <p>Analyze LeetCode problems solved, contest ratings, and global ranking. Built for competitive programmers and software engineers.</p>
-    </div>
-
-    <header class="fixed top-0 w-full max-w-4xl flex justify-between items-center p-6 z-50">
-        <div class="aura-font font-black text-2xl tracking-tighter text-indigo-400">
-            LEETAURA <span class="text-white opacity-50 text-sm italic">PRO</span>
+    <nav class="w-full flex justify-between items-center px-6 py-6 md:p-8 shrink-0">
+        <div class="aura-font font-black text-xl md:text-2xl tracking-tighter flex items-center gap-2">
+            <span class="text-indigo-500">LEET</span><span class="text-white">AURA</span>
         </div>
-        <nav aria-label="Quick Links">
-            <a href="https://gitaura-pro.vercel.app/" class="text-[9px] font-bold uppercase tracking-widest text-slate-400 border border-white/10 px-4 py-2 rounded-full hover:bg-white/5 hover:text-indigo-400 transition-all duration-300 flex items-center gap-2">
-                GITAURA MODE <span class="opacity-50">↗</span>
-            </a>
-        </nav>
-    </header>
+        <a href="https://gitaura-pro.vercel.app/" class="bg-white/5 border border-white/10 px-4 py-2 rounded-lg text-[9px] aura-font font-bold active:scale-95 transition-all uppercase tracking-widest">
+            GitAura
+        </a>
+    </nav>
 
-    <main class="text-center mb-10">
-        <div class="mb-6 flex justify-center">
-            <div class="float w-20 h-20 rounded-3xl bg-gradient-to-tr from-indigo-500 to-purple-600 flex items-center justify-center shadow-[0_0_50px_rgba(99,102,241,0.3)] border border-white/20">
-                <span class="aura-font text-4xl font-black italic">L</span>
+    <main class="flex flex-col items-center justify-center p-4 w-full max-w-[360px] md:max-w-lg mx-auto relative z-10">
+        
+       <div class="text-center mb-6 md:mb-8">
+    <div class="float-box w-14 h-14 md:w-16 md:h-16 mx-auto bg-gradient-to-br from-indigo-500 to-pink-500 rounded-xl flex items-center justify-center shadow-xl mb-5 overflow-hidden">
+        <img src="image.png" alt="Profile" class="w-full h-full object-cover rounded-xl">
+    </div>
+    <h1 class="aura-font text-3xl md:text-6xl font-black tracking-tighter italic mb-2 glitch-hover">
+        COMING <span class="bg-gradient-to-r from-indigo-500 to-pink-500 bg-clip-text text-transparent">SOON</span>
+    </h1>
+    <p class="mono-font text-slate-500 text-[8px] md:text-[9px] tracking-[0.3em] uppercase">Identity Protocol v4.0</p>
+</div>
+
+        <div class="w-full glass-panel rounded-2xl md:rounded-3xl overflow-hidden">
+            <div class="scanner"></div>
+            
+            <div class="bg-white/5 p-3 flex justify-between items-center border-b border-white/5">
+                <div class="flex gap-1.5">
+                    <div class="w-1.5 h-1.5 rounded-full bg-indigo-500/50"></div>
+                    <div class="w-1.5 h-1.5 rounded-full bg-white/10"></div>
+                </div>
+                <span class="mono-font text-[7px] md:text-[8px] text-slate-500 uppercase tracking-widest">System_Logs</span>
+            </div>
+
+            <div class="p-5 md:p-8 space-y-5 md:space-y-6">
+                <div class="space-y-2">
+                    <h2 class="aura-font text-base md:text-lg font-bold italic text-indigo-400">DECODE PERFORMANCE</h2>
+                    <p class="text-slate-400 text-[11px] md:text-xs leading-relaxed">
+                        Integrating <span class="text-white font-semibold">LeetCode Metrics</span>. Visualize your solving velocity and global rank.
+                    </p>
+                </div>
+
+                <div class="bg-black/40 rounded-xl p-3 md:p-4 border border-white/5 font-mono text-[9px] md:text-[10px] space-y-1.5 text-indigo-400/80">
+                    <p class="text-slate-600 mb-1 italic text-[8px] md:text-[9px]">// X99_INIT</p>
+                    <div class="flex justify-between"><span>> Fetch_Data</span><span class="text-green-500">[OK]</span></div>
+                    <div class="flex justify-between"><span>> Solve_Velocity</span><span class="text-green-500">[OK]</span></div>
+                    <div class="flex justify-between"><span>> Calibrate_Aura</span><span class="text-yellow-500">[WAIT]</span></div>
+                </div>
+
+                <div class="flex flex-col gap-3">
+                    <a href="https://gitaura-pro.vercel.app/" class="w-full bg-white text-black text-center py-3.5 md:py-4 rounded-xl aura-font text-[9px] font-black uppercase tracking-widest active:bg-indigo-500 active:text-white transition-all">
+                        Return to Command
+                    </a>
+                    <div class="py-1.5 text-center mono-font text-[7px] md:text-[9px] text-slate-600 border border-white/5 rounded-lg uppercase">
+                        Protocol: X-99
+                    </div>
+                </div>
             </div>
         </div>
-
-        <h1 class="aura-font text-5xl md:text-6xl font-black tracking-tighter glow-text bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 bg-clip-text text-transparent italic mb-2">
-            COMING SOON
-        </h1>
-        <p class="text-slate-400 font-light tracking-[0.4em] uppercase text-xs">
-            The Ultimate LeetCode Identity Scan
-        </p>
     </main>
 
-    <div class="gradient-border shadow-2xl">
-        <article class="glass-card text-center max-w-sm">
-            <div class="flex items-center gap-4 mb-6 text-left border-b border-white/10 pb-4">
-                <div class="relative">
-                    <div class="w-3 h-3 bg-indigo-500 rounded-full animate-ping"></div>
-                    <div class="absolute top-0 w-3 h-3 bg-indigo-500 rounded-full"></div>
-                </div>
-                <div>
-                    <h3 class="aura-font text-[10px] font-bold tracking-widest text-indigo-400 uppercase">System Calibration</h3>
-                    <p class="text-slate-400 text-[10px] mt-1 italic">Initializing <strong>LeetCode API</strong> Modules...</p>
-                </div>
+    <footer class="w-full p-6 md:p-8 flex flex-col md:flex-row justify-between items-center max-w-7xl mx-auto border-t border-white/5 gap-3 shrink-0">
+        <div class="aura-font text-[7px] md:text-[8px] text-slate-700 tracking-[0.4em] uppercase text-center">
+            © 2026 LEETAURA PRO • ENCRYPTED IDENTITY
+        </div>
+        <div class="flex gap-4 md:gap-6 items-center">
+            <div class="flex gap-1.5 items-center">
+                <div class="w-1 h-1 bg-indigo-500 rounded-full animate-ping"></div>
+                <span class="mono-font text-[8px] text-indigo-500 uppercase font-bold">System Live</span>
             </div>
-
-            <p class="text-sm text-slate-300 mb-8 leading-relaxed">
-                We are currently decoding performance algorithms and building the most advanced <strong>LeetCode profile analyzer</strong> for competitive programmers.
-            </p>
-
-            <a href="https://gitaura-pro.vercel.app/" class="w-full inline-block bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 py-4 rounded-xl font-bold uppercase tracking-widest shadow-2xl shadow-purple-500/20 active:scale-95 transition-all text-[11px]">
-                Explore GitAura Pro
-            </a>
-        </article>
-    </div>
-
-    <footer class="fixed bottom-8 w-full text-center">
-        <p class="text-[8px] text-slate-700 font-bold tracking-[0.8em] uppercase aura-font">
-            © 2026 LEETAURA PRO • X-99 PROTOCOL • PART OF THE GITAURA ECOSYSTEM
-        </p>
+        </div>
     </footer>
 </body>
 </html>

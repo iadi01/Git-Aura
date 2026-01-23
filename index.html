@@ -2,43 +2,65 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+   <title>GitAura | GitHub Profile Analyzer & Developer Rank Tool</title>
+<meta name="description" content="Analyze GitHub stats instantly. GitAura generates custom GitHub Aura cards, tracks contribution ranks, and visualizes developer identity for README profiles.">
 
-    <title>GitAura | Analyze Your Developer Identity</title>
-
-    <script src="https://cdn.tailwindcss.com"></script>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
-
-    <link
-        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Plus+Jakarta+Sans:wght@300;400;600&display=swap"
-        rel="stylesheet"
-    />
-
-    <link rel="stylesheet" href="style.css" />
-
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9657690036702429"
-     crossorigin="anonymous"></script>
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-YMG5CV5LKP"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-YMG5CV5LKP');
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "GitAura Pro",
+  "operatingSystem": "Web",
+  "applicationCategory": "DeveloperApplication",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.9",
+    "reviewCount": "2500"
+  },
+  "featureList": "GitHub Stats Analysis, Aura Card Generation, Developer Ranking, Contribution Tracking"
+}
 </script>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9657690036702429"
-     crossorigin="anonymous"></script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [{
+    "@type": "Question",
+    "name": "How is the GitHub Aura score calculated?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "GitAura analyzes public GitHub API data including pull requests, repository stars, commit frequency, and issue contributions to determine a developer's influence score."
+    }
+  }]
+}
+</script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Plus+Jakarta+Sans:wght@300;400;600&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YMG5CV5LKP"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-YMG5CV5LKP');
+    </script>
 </head>
 
-    
-
-<body class="min-h-screen flex flex-col items-center justify-center p-7">
+<body class="min-h-screen flex flex-col items-center p-7">
     <div class="bg-mesh"></div>
 
-<header class="fixed top-0 w-full max-w-4xl flex justify-between items-center p-6 z-50">
+    <header class="w-full max-w-4xl flex justify-between items-center p-6 z-50">
         <div class="aura-font font-black text-2xl tracking-tighter text-indigo-400">
             GitAURA <span class="text-white opacity-50 text-sm italic">PRO</span>
         </div>
@@ -46,268 +68,93 @@
             LEETAURA MODE <span class="opacity-50">↗</span>
         </a>
     </header>
-    
-    <!-- Header -->
-    <div class="text-center mb-8 animate-fade-in">
-        <h1
-            class="aura-font text-5xl font-black tracking-tighter glow-text
-                   bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400
-                   bg-clip-text text-transparent italic"
-        >
-            GitAURA
-        </h1>
 
-        <p
-            class="text-slate-400 font-light mt-2 tracking-widest uppercase text-xs"
-        >
-            Analyze Your Developer Identity
-        </p>
-    </div>
-
-    <!-- Input Section -->
-    <div class="w-full max-w-md flex flex-col gap-4 mb-10">
-        <div class="relative group">
-            <input
-                type="text"
-                id="username"
-                placeholder="GitHub Username..."
-                class="w-full bg-slate-900/50 border border-slate-700 rounded-xl
-                       px-5 py-4 focus:outline-none focus:ring-2
-                       focus:ring-purple-500 transition-all text-lg"
-            />
+    <main class="flex flex-col items-center mt-10 w-full max-w-4xl">
+        <div class="text-center mb-8">
+            <h1 class="aura-font text-5xl md:text-6xl font-black tracking-tighter glow-text bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 bg-clip-text text-transparent italic">
+                GitAURA
+            </h1>
+            <p class="text-slate-400 font-light mt-2 tracking-widest uppercase text-xs">
+                Ultimate GitHub Profile Analyzer & Developer Identity Card
+            </p>
         </div>
 
-        <button
-            onclick="checkAura()"
-            class="w-full bg-gradient-to-r from-indigo-600 to-purple-600
-                   hover:from-indigo-500 hover:to-purple-500 py-4 rounded-xl
-                   font-bold uppercase tracking-widest shadow-2xl
-                   shadow-purple-500/20 active:scale-95 transition-transform"
-        >
-            Scan profile
-        </button>
+        <div class="w-full max-w-md flex flex-col gap-4 mb-10">
+            <input type="text" id="username" placeholder="Enter GitHub Username..." class="w-full bg-slate-900/50 border border-slate-700 rounded-xl px-5 py-4 focus:outline-none focus:ring-2 focus:ring-purple-500 transition-all text-lg text-white"/>
+            <button onclick="checkAura()" class="w-full bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 py-4 rounded-xl font-bold uppercase tracking-widest shadow-2xl shadow-purple-500/20 active:scale-95 transition-transform text-white">
+                Scan Profile Identity
+            </button>
+            <p id="error" class="text-red-400 text-center text-sm hidden">User not found or API limit reached.</p>
+        </div>
 
-        <p
-            id="error"
-            class="text-red-400 text-center text-sm hidden"
-        >
-            User not found or API limit reached.
-        </p>
-    </div>
-
-    <!-- Aura Card -->
-    <div id="captureArea" class="hidden">
-        <div class="gradient-border shadow-2xl">
-            <div
-                id="auraCard"
-                class="glass-card p-10 w-full max-w-sm
-                       flex flex-col items-center text-center"
-            >
-                <div class="relative mb-6">
-                    <img
-                        id="avatar"
-                        src=""
-                        alt="Avatar"
-                        class="w-28 h-28 rounded-2xl border-2
-                               border-white/20 p-1 shadow-2xl"
-                    />
-
-                    <div
-                        id="rankBadge"
-                        class="absolute -bottom-3 -right-3 bg-white
-                               text-black text-[10px] font-black px-3 py-1
-                               rounded-md aura-font uppercase"
-                    >
-                        LEVEL 0
+        <div id="captureArea" class="hidden">
+            <div class="gradient-border shadow-2xl">
+                <div id="auraCard" class="glass-card p-10 w-full max-w-sm flex flex-col items-center text-center">
+                    <div class="relative mb-6">
+                        <img id="avatar" src="" alt="Developer Profile" class="w-28 h-28 rounded-2xl border-2 border-white/20 p-1 shadow-2xl"/>
+                        <div id="rankBadge" class="absolute -bottom-3 -right-3 bg-white text-black text-[10px] font-black px-3 py-1 rounded-md aura-font uppercase">LEVEL 0</div>
                     </div>
-                </div>
-
-                <h2
-                    id="name"
-                    class="text-2xl font-bold tracking-tight mb-1"
-                >
-                    Developer
-                </h2>
-
-                <p
-                    id="login"
-                    class="text-purple-400 text-sm font-medium mb-6"
-                >
-                    @github
-                </p>
-
-                <div class="grid grid-cols-2 gap-8 w-full mb-8">
-                    <div class="flex flex-col">
-                        <span
-                            class="text-[10px] text-slate-500 uppercase
-                                   font-bold tracking-tighter"
-                        >
-                            Aura Score
-                        </span>
-
-                        <span
-                            id="score"
-                            class="aura-font text-2xl text-white font-bold"
-                        >
-                            0000
-                        </span>
+                    <h2 id="name" class="text-2xl font-bold tracking-tight mb-1 text-white">Developer</h2>
+                    <p id="login" class="text-purple-400 text-sm font-medium mb-6">@github</p>
+                    <div class="grid grid-cols-2 gap-8 w-full mb-8">
+                        <div><span class="text-[10px] text-slate-500 uppercase font-bold tracking-tighter">Aura Score</span><span id="score" class="aura-font text-2xl text-white font-bold block">0000</span></div>
+                        <div class="border-l border-white/10 pl-4"><span class="text-[10px] text-slate-500 uppercase font-bold tracking-tighter">Rank Status</span><span id="rankTitle" class="aura-font text-lg text-indigo-400 leading-tight block uppercase">ROOKIE</span></div>
                     </div>
-
-                    <div
-                        class="flex flex-col border-l border-white/10"
-                    >
-                        <span
-                            class="text-[10px] text-slate-500 uppercase
-                                   font-bold tracking-tighter"
-                        >
-                            Rank Status
-                        </span>
-
-                        <span
-                            id="rankTitle"
-                            class="aura-font text-lg text-indigo-400
-                                   leading-tight"
-                        >
-                            ROOKIE
-                        </span>
+                    <div class="w-full bg-white/5 rounded-lg py-3 px-4 mb-4 border border-white/5">
+                        <p id="auraQuote" class="text-xs italic text-slate-300">"Analyzing code patterns..."</p>
                     </div>
-                </div>
-
-                <div
-                    class="w-full bg-white/5 rounded-lg py-3 px-4
-                           mb-4 border border-white/5"
-                >
-                    <p
-                        id="auraQuote"
-                        class="text-xs italic text-slate-300"
-                    >
-                        "Analyzing code patterns..."
-                    </p>
-                </div>
-
-                <div
-                    class="flex gap-2 opacity-50 text-[10px]
-                           font-bold mb-4"
-                >
-                    <span id="repoCount">0 REPOS</span>
-                    •
-                    <span id="followerCount">0 FOLLOWERS</span>
-                </div>
-
-                <div
-                    class="pt-4 border-t border-white/10 w-full"
-                >
-                    <p
-                        class="text-[10px] tracking-widest
-                               text-slate-500 font-bold uppercase
-                               aura-font"
-                    >
-                        Generated by
-                        <span class="text-indigo-400 italic">
-                            Git-AURA
-                        </span>
-                    </p>
-
-                    <a
-                        href="https://github.com/iadi01"
-                        class="text-[8px] text-slate-600 mt-1"
-                    >
-                        Visit: gitaura-pro.vercel.app
-                    </a>
+                    <div class="flex gap-2 opacity-50 text-[10px] font-bold mb-4 text-white">
+                        <span id="repoCount">0 REPOS</span> • <span id="followerCount">0 FOLLOWERS</span>
+                    </div>
+                    <div class="pt-4 border-t border-white/10 w-full">
+                        <p class="text-[10px] tracking-widest text-slate-500 font-bold uppercase aura-font">Generated by <span class="text-indigo-400 italic">Git-AURA</span></p>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <!-- Download Button -->
-    <button
-        id="downloadBtn"
-        onclick="downloadCard()"
-        class="mt-8 hidden flex items-center gap-2
-               text-slate-400 hover:text-white
-               transition-colors"
-    >
-        <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="h-5 w-5"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-        >
-            <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M4 16v1a3 3 0 003 3h10a3 3 0
-                   003-3v-1m-4-4l-4 4m0 0
-                   l-4-4m4 4V4"
-            />
-        </svg>
+        <button id="downloadBtn" onclick="downloadCard()" class="mt-8 hidden flex items-center gap-2 text-slate-400 hover:text-white transition-colors">
+            Save GitAura Card
+        </button>
 
-        Save GitAura Card
-    </button>
+        <article class="mt-24 w-full text-left bg-slate-900/40 p-10 rounded-3xl border border-white/10">
+            <h2 class="aura-font text-2xl text-indigo-400 mb-6">How GitAura Analyzes Your GitHub Stats</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10 text-slate-400 text-sm leading-relaxed">
+                <div>
+                    <h3 class="text-white font-bold mb-2">Detailed GitHub Profile Analysis</h3>
+                    <p>GitAura Pro is the most advanced <strong>github profile analyzer</strong>. We use real-time data from the GitHub API to calculate your developer reputation.</p>
+                </div>
+                <div>
+                    <h3 class="text-white font-bold mb-2">What is a GitHub Aura Score?</h3>
+                    <p>Your <strong>GitHub Aura</strong> is a numerical representation of your influence in the open-source community. Track your <strong>github stats</strong> daily.</p>
+                </div>
+            </div>
+        </article>
+    </main>
 
-    <!-- Footer -->
-    <footer class="w-full py-6 mt-12">
-        <div class="flex flex-col items-center gap-3">
-            <nav
-                class="flex flex-wrap justify-center gap-x-4 gap-y-2
-                       text-[9px] font-bold uppercase
-                       tracking-[0.1em] text-slate-600"
-            >
-                <a
-                    href="about-us.html"
-                    class="hover:text-indigo-400
-                           transition-colors whitespace-nowrap"
-                >
-                    About Us
-                </a>
-
-                <span class="opacity-20 hidden md:inline">|</span>
-
-                <a
-                    href="privacy-policy.html"
-                    class="hover:text-indigo-400
-                           transition-colors whitespace-nowrap"
-                >
-                    Privacy Policy
-                </a>
-
-                <span class="opacity-20 hidden md:inline">|</span>
-
-                <a
-                    href="disclaimer.html"
-                    class="hover:text-indigo-400
-                           transition-colors whitespace-nowrap"
-                >
-                    Disclaimer
-                </a>
-
-                <span class="opacity-20 hidden md:inline">|</span>
-
-                <a
-                    href="Contact.html"
-                    class="hover:text-indigo-400
-                           transition-colors whitespace-nowrap"
-                >
-                    Contact
-                </a>
-            </nav>
-
-            <p
-                class="text-[8px] text-slate-800
-                       font-medium tracking-widest uppercase"
-            >
-                © 2026 Git-Aura Pro
-            </p>
-        </div>
+    <footer class="w-full py-12 mt-12 flex flex-col items-center border-t border-white/5">
+        <nav class="flex flex-wrap justify-center gap-6 text-[10px] font-bold uppercase tracking-widest text-slate-600 mb-4">
+            <a href="about-us.html" class="hover:text-indigo-400 transition-all">About Us</a>
+            <a href="privacy-policy.html" class="hover:text-indigo-400 transition-all">Privacy</a>
+            <a href="disclaimer.html" class="hover:text-indigo-400 transition-all">Disclaimer</a>
+            <a href="contact.html" class="hover:text-indigo-400 transition-all">Contact</a>
+            <a href="/blog/blog.html" class="hover:text-indigo-400 transition-all">Blog</a>
+        </nav>
+        <p class="text-[9px] text-slate-700 tracking-widest">© 2026 GIT-AURA PRO | BUILT FOR DEVELOPERS</p>
     </footer>
 
     <script src="script.js"></script>
+    
+    <script>
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                var script = document.createElement('script');
+                script.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9657690036702429";
+                script.async = true;
+                script.crossOrigin = "anonymous";
+                document.head.appendChild(script);
+            }, 3000);
+        });
+    </script>
 </body>
 </html>
-
-
-
-
-

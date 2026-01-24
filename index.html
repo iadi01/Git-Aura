@@ -4,46 +4,48 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
-   <title>GitAura | GitHub Profile Analyzer & Developer Rank Tool</title>
-<meta name="description" content="Analyze GitHub stats instantly. GitAura generates custom GitHub Aura cards, tracks contribution ranks, and visualizes developer identity for README profiles.">
+    <title>GitAura | GitHub Profile Analyzer & Developer Rank Tool</title>
+    <meta name="description" content="Analyze GitHub stats instantly. GitAura generates custom GitHub Aura cards, tracks contribution ranks, and visualizes developer identity for README profiles.">
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
-  "name": "GitAura Pro",
-  "operatingSystem": "Web",
-  "applicationCategory": "DeveloperApplication",
-  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "4.9",
-    "reviewCount": "2500"
-  },
-  "featureList": "GitHub Stats Analysis, Aura Card Generation, Developer Ranking, Contribution Tracking"
-}
-</script>
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [{
-    "@type": "Question",
-    "name": "How is the GitHub Aura score calculated?",
-    "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "GitAura analyzes public GitHub API data including pull requests, repository stars, commit frequency, and issue contributions to determine a developer's influence score."
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "GitAura Pro",
+      "operatingSystem": "Web",
+      "applicationCategory": "DeveloperApplication",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "reviewCount": "2500"
+      },
+      "featureList": "GitHub Stats Analysis, Aura Card Generation, Developer Ranking, Contribution Tracking"
     }
-  }]
-}
-</script>
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [{
+        "@type": "Question",
+        "name": "How is the GitHub Aura score calculated?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "GitAura analyzes public GitHub API data including pull requests, repository stars, commit frequency, and issue contributions to determine a developer's influence score."
+        }
+      }]
+    }
+    </script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.tailwindcss.com">
     
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js" defer></script>
+    
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Plus+Jakarta+Sans:wght@300;400;600&display=swap" rel="stylesheet"/>
     <link rel="stylesheet" href="style.css" />
     <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
@@ -133,17 +135,17 @@
     </main>
 
     <footer class="w-full py-12 mt-12 flex flex-col items-center border-t border-white/5">
-         <nav class="flex flex-wrap justify-center gap-6 text-[10px] font-bold uppercase tracking-widest text-slate-600 mb-4">
-            <a href="about-us.html" class="text-slate-300 hover:text-indigo-300 transition-all font-medium">About Us</a>
-            <a href="privacy-policy.html" class="text-slate-300 hover:text-indigo-300 transition-all font-medium">Privacy</a>
-            <a href="disclaimer.html" class="text-slate-300 hover:text-indigo-300 transition-all font-medium">Disclaimer</a>
-            <a href="Contact.html" class="text-slate-300 hover:text-indigo-300 transition-all font-medium">Contact</a>
-            <a href="/blog/blog.html" class="text-slate-300 hover:text-indigo-300 transition-all font-medium">Blog</a>
+         <nav class="flex flex-wrap justify-center gap-6 text-[10px] font-bold uppercase tracking-widest mb-4">
+            <a href="about-us.html" class="text-slate-300 hover:text-indigo-300 transition-all">About Us</a>
+            <a href="privacy-policy.html" class="text-slate-300 hover:text-indigo-300 transition-all">Privacy</a>
+            <a href="disclaimer.html" class="text-slate-300 hover:text-indigo-300 transition-all">Disclaimer</a>
+            <a href="Contact.html" class="text-slate-300 hover:text-indigo-300 transition-all">Contact</a>
+            <a href="/blog/blog.html" class="text-slate-300 hover:text-indigo-300 transition-all">Blog</a>
         </nav>
-        <p class="text-[9px] text-slate-700 tracking-widest">© 2026 GIT-AURA PRO | BUILT FOR DEVELOPERS</p>
+        <p class="text-[9px] text-slate-500 tracking-widest">© 2026 GIT-AURA PRO | BUILT FOR DEVELOPERS</p>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
     
     <script>
         window.addEventListener('load', function() {
@@ -153,10 +155,8 @@
                 script.async = true;
                 script.crossOrigin = "anonymous";
                 document.head.appendChild(script);
-            }, 3000);
+            }, 3500);
         });
     </script>
 </body>
 </html>
-
-

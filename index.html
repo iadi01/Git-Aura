@@ -24,29 +24,15 @@
     }
     </script>
 
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [{
-        "@type": "Question",
-        "name": "How is the GitHub Aura score calculated?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "GitAura analyzes public GitHub API data including pull requests, repository stars, commit frequency, and issue contributions to determine a developer's influence score."
-        }
-      }]
-    }
-    </script>
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://cdn.tailwindcss.com">
+    <link rel="preload" href="https://cdn.tailwindcss.com" as="script">
     
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js" defer></script>
     
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Plus+Jakarta+Sans:wght@300;400;600&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Plus+Jakarta+Sans:wght@300;400;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'"/>
+    
     <link rel="stylesheet" href="style.css" />
     <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
     
@@ -55,7 +41,7 @@
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      gtag('config', 'G-YMG5CV5LKP');
+      gtag('config', 'G-YMG5CV5LKP', { 'page_path': window.location.pathname });
     </script>
 </head>
 
@@ -93,7 +79,7 @@
             <div class="gradient-border shadow-2xl">
                 <div id="auraCard" class="glass-card p-10 w-full max-w-sm flex flex-col items-center text-center">
                     <div class="relative mb-6">
-                        <img id="avatar" src="" alt="Developer Profile" class="w-28 h-28 rounded-2xl border-2 border-white/20 p-1 shadow-2xl"/>
+                        <img id="avatar" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" width="112" height="112" alt="Developer Profile" class="w-28 h-28 rounded-2xl border-2 border-white/20 p-1 shadow-2xl"/>
                         <div id="rankBadge" class="absolute -bottom-3 -right-3 bg-white text-black text-[10px] font-black px-3 py-1 rounded-md aura-font uppercase">LEVEL 0</div>
                     </div>
                     <h2 id="name" class="text-2xl font-bold tracking-tight mb-1 text-white">Developer</h2>
@@ -142,12 +128,13 @@
             <a href="Contact.html" class="text-slate-300 hover:text-indigo-300 transition-all">Contact</a>
             <a href="/blog/blog.html" class="text-slate-300 hover:text-indigo-300 transition-all">Blog</a>
         </nav>
-        <p class="text-[9px] text-slate-500 tracking-widest">© 2026 GIT-AURA PRO | BUILT FOR DEVELOPERS</p>
+        <p class="text-[9px] text-slate-350 tracking-widest">© 2026 GIT-AURA PRO | BUILT FOR DEVELOPERS</p>
     </footer>
 
     <script src="script.js" defer></script>
     
     <script>
+        // Lazy load ads to prioritize main content
         window.addEventListener('load', function() {
             setTimeout(function() {
                 var script = document.createElement('script');

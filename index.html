@@ -14,11 +14,13 @@
       "name": "GitAura Pro",
       "operatingSystem": "Web",
       "applicationCategory": "DeveloperApplication",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
       "aggregateRating": {
         "@type": "AggregateRating",
         "ratingValue": "4.9",
         "reviewCount": "2500"
-      }
+      },
+      "featureList": "GitHub Stats Analysis, Aura Card Generation, Developer Ranking, Contribution Tracking"
     }
     </script>
 
@@ -34,20 +36,12 @@
     <link rel="stylesheet" href="style.css" />
     <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
     
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YMG5CV5LKP"></script>
     <script>
-        window.addEventListener('load', function() {
-            setTimeout(function() {
-                var gt = document.createElement('script');
-                gt.src = "https://www.googletagmanager.com/gtag/js?id=G-YMG5CV5LKP";
-                gt.async = true;
-                document.head.appendChild(gt);
-                
-                window.dataLayer = window.dataLayer || [];
-                function gtag(){dataLayer.push(arguments);}
-                gtag('js', new Date());
-                gtag('config', 'G-YMG5CV5LKP');
-            }, 4000); 
-        });
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-YMG5CV5LKP', { 'page_path': window.location.pathname });
     </script>
 </head>
 
@@ -110,92 +104,46 @@
         <button id="downloadBtn" onclick="downloadCard()" class="mt-8 hidden flex items-center gap-2 text-slate-400 hover:text-white transition-colors">
             Save GitAura Card
         </button>
+
+        <article class="mt-24 w-full text-left bg-slate-900/40 p-10 rounded-3xl border border-white/10">
+            <h2 class="aura-font text-2xl text-indigo-400 mb-6">How GitAura Analyzes Your GitHub Stats</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10 text-slate-400 text-sm leading-relaxed">
+                <div>
+                    <h3 class="text-white font-bold mb-2">Detailed GitHub Profile Analysis</h3>
+                    <p>GitAura Pro is the most advanced <strong>github profile analyzer</strong>. We use real-time data from the GitHub API to calculate your developer reputation.</p>
+                </div>
+                <div>
+                    <h3 class="text-white font-bold mb-2">What is a GitHub Aura Score?</h3>
+                    <p>Your <strong>GitHub Aura</strong> is a numerical representation of your influence in the open-source community. Track your <strong>github stats</strong> daily.</p>
+                </div>
+            </div>
+        </article>
     </main>
 
+    <footer class="w-full py-12 mt-12 flex flex-col items-center border-t border-white/5">
+         <nav class="flex flex-wrap justify-center gap-6 text-[10px] font-bold uppercase tracking-widest mb-4">
+            <a href="about-us.html" class="text-slate-300 hover:text-indigo-300 transition-all">About Us</a>
+            <a href="privacy-policy.html" class="text-slate-300 hover:text-indigo-300 transition-all">Privacy</a>
+            <a href="disclaimer.html" class="text-slate-300 hover:text-indigo-300 transition-all">Disclaimer</a>
+            <a href="Contact.html" class="text-slate-300 hover:text-indigo-300 transition-all">Contact</a>
+            <a href="/blog/blog.html" class="text-slate-300 hover:text-indigo-300 transition-all">Blog</a>
+        </nav>
+        <p class="text-[9px] text-slate-350 tracking-widest">© 2026 GIT-AURA PRO | BUILT FOR DEVELOPERS</p>
+    </footer>
+
+    <script src="script.js" defer></script>
+    
     <script>
-    async function checkAura() {
-        const usernameInput = document.getElementById('username');
-        const username = usernameInput.value.trim();
-        if (!username) return;
-
-        const elements = {
-            avatar: document.getElementById('avatar'),
-            name: document.getElementById('name'),
-            login: document.getElementById('login'),
-            score: document.getElementById('score'),
-            repoCount: document.getElementById('repoCount'),
-            followerCount: document.getElementById('followerCount'),
-            rankBadge: document.getElementById('rankBadge'),
-            rankTitle: document.getElementById('rankTitle'),
-            auraQuote: document.getElementById('auraQuote'),
-            captureArea: document.getElementById('captureArea'),
-            downloadBtn: document.getElementById('downloadBtn'),
-            error: document.getElementById('error')
-        };
-
-        try {
-            const res = await fetch(`https://api.github.com/users/${username}`);
-            if (!res.ok) throw new Error("User not found");
-            const data = await res.json();
-
-            let score = (data.public_repos * 15) + (data.followers * 30) + (data.public_gists * 10);
-            const yearsOld = new Date().getFullYear() - new Date(data.created_at).getFullYear() || 1;
-            score += (yearsOld * 250);
-
-            elements.avatar.src = data.avatar_url;
-            elements.name.textContent = data.name || data.login;
-            elements.login.textContent = `@${data.login}`;
-            elements.score.textContent = score.toLocaleString();
-            elements.repoCount.textContent = `${data.public_repos} REPOS`;
-            elements.followerCount.textContent = `${data.followers} FOLLOWERS`;
-
-            const rankLevels = [
-                { min: 20000, rank: "DIVINE ARCHITECT", quote: "You have transcended the digital reality." },
-                { min: 15000, rank: "OMNIPOTENT", quote: "The binary world bows to your command." },
-                { min: 12000, rank: "GALAXY CONQUEROR", quote: "Your repositories span across the stars." },
-                { min: 10000, rank: "ZENITH", quote: "The peak of human logic and creativity." },
-                { min: 9000, rank: "GIT GOD", quote: "The ultimate architect of the digital universe." },
-                { min: 8000, rank: "ETHEREAL", quote: "Floating above the common codebase." },
-                { min: 7000, rank: "CELESTIAL", quote: "Your code shines brighter than a thousand stars." },
-                { min: 6000, rank: "IMMORTAL", quote: "Bugs fear your name across generations." },
-                { min: 5000, rank: "MYTHIC", quote: "A living legend in the world of bits and bytes." },
-                { min: 0, rank: "POOKIE", quote: "New to the game, but the potential is huge!" }
-            ];
-
-            const { rank, quote } = rankLevels.find(level => score >= level.min) || rankLevels[rankLevels.length - 1];
-
-            elements.rankBadge.textContent = `LEVEL ${yearsOld}`;
-            elements.rankTitle.textContent = rank;
-            elements.auraQuote.textContent = `"${quote}"`;
-
-            elements.captureArea.classList.remove('hidden');
-            elements.downloadBtn.classList.remove('hidden');
-            elements.error.classList.add('hidden');
-
-        } catch (err) {
-            elements.error.classList.remove('hidden');
-            elements.captureArea.classList.add('hidden');
-            elements.downloadBtn.classList.add('hidden');
-        }
-    }
-
-    function downloadCard() {
-        const area = document.getElementById('captureArea');
-        if (!area) return;
-
-        html2canvas(area, {
-            backgroundColor: "#020617",
-            scale: 2,
-            useCORS: true,
-            logging: false
-        }).then(canvas => {
-            const link = document.createElement('a');
-            const login = document.getElementById('login').innerText || 'user';
-            link.download = `GitAura-${login}.png`;
-            link.href = canvas.toDataURL("image/png");
-            link.click();
+        // Lazy load ads to prioritize main content
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                var script = document.createElement('script');
+                script.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9657690036702429";
+                script.async = true;
+                script.crossOrigin = "anonymous";
+                document.head.appendChild(script);
+            }, 3500);
         });
-    }
     </script>
 </body>
 </html>

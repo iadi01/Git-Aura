@@ -14,13 +14,11 @@
       "name": "GitAura Pro",
       "operatingSystem": "Web",
       "applicationCategory": "DeveloperApplication",
-      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
       "aggregateRating": {
         "@type": "AggregateRating",
         "ratingValue": "4.9",
         "reviewCount": "2500"
-      },
-      "featureList": "GitHub Stats Analysis, Aura Card Generation, Developer Ranking, Contribution Tracking"
+      }
     }
     </script>
 
@@ -36,12 +34,20 @@
     <link rel="stylesheet" href="style.css" />
     <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
     
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YMG5CV5LKP"></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-YMG5CV5LKP', { 'page_path': window.location.pathname });
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                var gt = document.createElement('script');
+                gt.src = "https://www.googletagmanager.com/gtag/js?id=G-YMG5CV5LKP";
+                gt.async = true;
+                document.head.appendChild(gt);
+                
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', 'G-YMG5CV5LKP');
+            }, 4000); 
+        });
     </script>
 </head>
 
@@ -110,11 +116,11 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-10 text-slate-400 text-sm leading-relaxed">
                 <div>
                     <h3 class="text-white font-bold mb-2">Detailed GitHub Profile Analysis</h3>
-                    <p>GitAura Pro is the most advanced <strong>github profile analyzer</strong>. We use real-time data from the GitHub API to calculate your developer reputation.</p>
+                    <p>GitAura Pro is the most advanced <strong>github profile analyzer</strong>. We use real-time data from the GitHub API.</p>
                 </div>
                 <div>
                     <h3 class="text-white font-bold mb-2">What is a GitHub Aura Score?</h3>
-                    <p>Your <strong>GitHub Aura</strong> is a numerical representation of your influence in the open-source community. Track your <strong>github stats</strong> daily.</p>
+                    <p>Your <strong>GitHub Aura</strong> is a numerical representation of your influence. Track your <strong>github stats</strong> daily.</p>
                 </div>
             </div>
         </article>
@@ -134,7 +140,7 @@
     <script src="script.js" defer></script>
     
     <script>
-        // Lazy load ads to prioritize main content
+        // Lazy load ads 4 seconds after page is interactive
         window.addEventListener('load', function() {
             setTimeout(function() {
                 var script = document.createElement('script');
@@ -142,7 +148,7 @@
                 script.async = true;
                 script.crossOrigin = "anonymous";
                 document.head.appendChild(script);
-            }, 3500);
+            }, 4500);
         });
     </script>
 </body>

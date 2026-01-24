@@ -16,6 +16,6 @@ Crawl-delay: 1
 
 # Sitemap Location
 Sitemap: https://gitaura-pro.vercel.app/sitemap.xml
-google-site-verification=OyxrRv4mBeeY-hRjuzASYfRay2lau9xyzTixil1tem8
 
 # Hosted on Vercel Edge - Optimized for 2026 Web Standards
+

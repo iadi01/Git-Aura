@@ -1,30 +1,56 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://gitaura-pro.vercel.app/</loc>
-    <lastmod>2026-01-23</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>1.0</priority>
+    <loc>https://gitaura-pro.vercel.app/index.html</loc>
+    <lastmod>2026-01-25</lastmod>
+    <priority>1.00</priority>
   </url>
-  
+
   <url>
     <loc>https://gitaura-pro.vercel.app/leetaura.html</loc>
-    <lastmod>2026-01-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2026-01-25</lastmod>
+    <priority>0.90</priority>
   </url>
-
   <url>
-    <loc>https://gitaura-pro.vercel.app/increase-aura.html</loc>
-    <lastmod>2026-01-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <loc>https://gitaura-pro.vercel.app/readme-tools.html</loc>
+    <lastmod>2026-01-25</lastmod>
+    <priority>0.85</priority>
   </url>
-
   <url>
     <loc>https://gitaura-pro.vercel.app/top-india.html</loc>
-    <lastmod>2026-01-23</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2026-01-25</lastmod>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://gitaura-pro.vercel.app/increase-aura.html</loc>
+    <lastmod>2026-01-25</lastmod>
+    <priority>0.80</priority>
+  </url>
+
+  <url>
+    <loc>https://gitaura-pro.vercel.app/blog.html</loc>
+    <lastmod>2026-01-25</lastmod>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://gitaura-pro.vercel.app/about-us.html</loc>
+    <lastmod>2026-01-25</lastmod>
+    <priority>0.60</priority>
+  </url>
+
+  <url>
+    <loc>https://gitaura-pro.vercel.app/Contact.html</loc>
+    <lastmod>2026-01-25</lastmod>
+    <priority>0.50</priority>
+  </url>
+  <url>
+    <loc>https://gitaura-pro.vercel.app/privacy-policy.html</loc>
+    <lastmod>2026-01-25</lastmod>
+    <priority>0.30</priority>
+  </url>
+  <url>
+    <loc>https://gitaura-pro.vercel.app/disclaimer.html</loc>
+    <lastmod>2026-01-25</lastmod>
+    <priority>0.30</priority>
   </url>
 </urlset>
